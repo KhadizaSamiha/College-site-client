@@ -15,12 +15,14 @@ import CollegeDetails from './Pages/Routes/CollegeDetails';
 import Admission from './Pages/Routes/Admission';
 import AdmissionDetails from './Pages/Routes/AdmissionDetails';
 import MyColleges from './Pages/Routes/MyColleges';
+import Error from './Pages/Shared/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/collegeDetails/:id",
         element: <CollegeDetails></CollegeDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+        loader: ({ params }) => fetch(`https://college-site-server.vercel.app/colleges/${params.id}`)
       },
       {
         path: '/admission',
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
       {
         path: '/admissionDetails/:id',
         element: <AdmissionDetails></AdmissionDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+        loader: ({ params }) => fetch(`https://college-site-server.vercel.app/colleges/${params.id}`)
       },
       {
         path:'/myColleges',

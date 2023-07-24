@@ -23,7 +23,7 @@ const AdmissionDetails = () => {
         const researchCount = colleges.research_count;
         const user = { name, email, subject, number, address, date, image , collegeImage,collegeName,admissionDate,  collegeRating, researchCount  }
 
-        fetch(`http://localhost:5000/admission`, {
+        fetch(`https://college-site-server.vercel.app/admission`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
